@@ -1,4 +1,10 @@
 {
   "name": "@test-group/nest-connector",
-  "version": "0.0.1"
+  "version": "0.0.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "commonjs",
+  "main": "./src/index.ts",
+  "typings": "./src/index.d.ts"
 }

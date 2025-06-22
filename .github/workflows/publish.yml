@@ -37,7 +37,7 @@ jobs:
               shell: bash
 
             - name: Build packages
-              run: npx nx run-many -t build
+              run: npx nx run-many -t build --projects="libs/*"
               shell: bash
 
 
