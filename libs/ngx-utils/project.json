@@ -1,6 +1,6 @@
 {
   "name": "ngx-utils",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "$schema": "/node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/ngx-utils/src",
   "prefix": "hc",
   "projectType": "library",
