@@ -1,5 +1,5 @@
 {
-  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "$schema": "/node_modules/nx/schemas/nx-schema.json",
   "namedInputs": {
     "default": [
       "{projectRoot}/**/*",
@@ -86,8 +86,13 @@
   },
   "release": {
     "projects": ["libs/*"],
+    "projectsRelationship": "independent",
     "version": {
       "preVersionCommand": "npx nx run-many -t build"
+    },
+    "releaseTagPattern": "release/{projectName}/{version}",
+    "changelog": {
+      "projectChangelogs": true
     }
   },
   "generators": {
