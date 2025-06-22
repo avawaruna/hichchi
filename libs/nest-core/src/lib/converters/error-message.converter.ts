@@ -2,7 +2,7 @@
 
 import { toJSON, toString } from "./json.converter";
 import { LoggerService } from "../services";
-import { ErrorResponse, Errors } from "@hichchi/nest-connector";
+import { ErrorResponse, Errors } from "@test-group/nest-connector";
 
 /**
  * Convert the error object to a JSON string and return as the message

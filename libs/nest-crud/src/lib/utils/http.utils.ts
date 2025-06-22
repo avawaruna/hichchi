@@ -1,6 +1,6 @@
 import { FilterOptions, SortOptions } from "../types";
 import { FindOptionsOrderProperty } from "typeorm/find-options/FindOptionsOrder";
-import { LiteralObject, pathValueSetToObject } from "@hichchi/utils";
+import { LiteralObject, pathValueSetToObject } from "@test-group/utils";
 
 /**
  * Parse the sort options from the query string

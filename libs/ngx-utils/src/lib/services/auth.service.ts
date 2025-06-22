@@ -12,8 +12,8 @@ import {
     SignUpBody,
     TokenResponse,
     User,
-} from "@hichchi/nest-connector/auth";
-import { Endpoint, SuccessResponse } from "@hichchi/nest-connector";
+} from "@test-group/nest-connector/auth";
+import { Endpoint, SuccessResponse } from "@test-group/nest-connector";
 
 @Injectable({
     providedIn: "root",

@@ -1,5 +1,5 @@
 import { IsEmail, IsNotEmpty } from "class-validator";
-import { EntityDto } from "@hichchi/nest-crud";
+import { EntityDto } from "@test-group/nest-crud";
 import { UserEntity } from "../entities";
 
 @EntityDto(UserEntity)

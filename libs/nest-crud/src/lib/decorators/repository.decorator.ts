@@ -1,7 +1,7 @@
 // noinspection JSUnusedGlobalSymbols
 
 import { InjectRepository } from "@nestjs/typeorm";
-import { ImplementationException } from "@hichchi/nest-core";
+import { ImplementationException } from "@test-group/nest-core";
 import { BaseEntity, BaseRepository } from "../base";
 import { Injectable } from "@nestjs/common";
 import { RepositoryDecorator } from "../types";

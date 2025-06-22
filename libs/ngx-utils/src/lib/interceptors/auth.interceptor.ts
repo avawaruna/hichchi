@@ -1,7 +1,7 @@
 import { HttpEvent, HttpHandlerFn, HttpInterceptorFn, HttpRequest } from "@angular/common/http";
 import { catchError, filter, Observable, ReplaySubject, switchMap, take, throwError } from "rxjs";
-import { AccessToken, AuthEndpoint, AuthErrorResponseCode, TokenResponse } from "@hichchi/nest-connector/auth";
-import { Endpoint, ErrorResponseCode, HttpClientErrorStatus } from "@hichchi/nest-connector";
+import { AccessToken, AuthEndpoint, AuthErrorResponseCode, TokenResponse } from "@test-group/nest-connector/auth";
+import { Endpoint, ErrorResponseCode, HttpClientErrorStatus } from "@test-group/nest-connector";
 import { inject } from "@angular/core";
 import { Router } from "@angular/router";
 import { HttpError } from "../interfaces";

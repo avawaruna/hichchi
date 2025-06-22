@@ -1,5 +1,5 @@
 import { Request } from "express";
-import { AccessToken } from "@hichchi/nest-connector/auth";
+import { AccessToken } from "@test-group/nest-connector/auth";
 import { ACCESS_TOKEN_COOKIE_NAME } from "../constants";
 
 /**

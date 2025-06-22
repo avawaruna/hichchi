@@ -1,9 +1,9 @@
 import { Inject, Injectable } from "@nestjs/common";
 import { AuthOptions, IJwtPayload } from "../interfaces";
 import { JwtService } from "@nestjs/jwt";
-import { AccessToken, RefreshToken } from "@hichchi/nest-connector/auth";
+import { AccessToken, RefreshToken } from "@test-group/nest-connector/auth";
 import { AUTH_OPTIONS } from "../tokens";
-import { SECOND_IN_MS } from "@hichchi/nest-connector";
+import { SECOND_IN_MS } from "@test-group/nest-connector";
 
 /**
  * JWT Token Service

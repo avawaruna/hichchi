@@ -1,7 +1,7 @@
 // noinspection JSUnusedGlobalSymbols
 
 import { JoinColumn, JoinColumnOptions } from "typeorm";
-import { toCamelCase } from "@hichchi/utils";
+import { toCamelCase } from "@test-group/utils";
 import { MetadataKeys } from "../enums/metadata-keys.enum";
 
 /**

@@ -3,7 +3,7 @@
 import { HttpSuccessStatus } from "../enums";
 import { SuccessResponses } from "../responses";
 import { SuccessResponse } from "../interfaces";
-import { LooseAutocomplete } from "@hichchi/utils";
+import { LooseAutocomplete } from "@test-group/utils";
 import { AuthSuccessResponseCode } from "../../auth";
 
 export class SuccessResponseDto implements SuccessResponse {

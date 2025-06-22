@@ -1,6 +1,6 @@
 import { AfterLoad, Column, DeleteDateColumn, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-import { UserInfo } from "@hichchi/nest-connector";
-import { EntityId, Model } from "@hichchi/nest-connector/crud";
+import { UserInfo } from "@test-group/nest-connector";
+import { EntityId, Model } from "@test-group/nest-connector/crud";
 
 export const BaseEntityTemplateRelations = ["createdBy", "updatedBy", "deletedBy"];
 

@@ -1,9 +1,9 @@
 /* eslint-disable */
 import { Component, inject } from "@angular/core"
 import { FormBuilder, ReactiveFormsModule, Validators } from "@angular/forms"
-import { prune } from "@hichchi/utils"
-import { SignInBody } from "@hichchi/nest-connector/auth"
-import { AuthState } from "@hichchi/ngx-utils"
+import { prune } from "@test-group/utils"
+import { SignInBody } from "@test-group/nest-connector/auth"
+import { AuthState } from "@test-group/ngx-utils"
 
 @Component({
     selector: "app-login",

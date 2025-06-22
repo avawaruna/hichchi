@@ -1,11 +1,11 @@
 // noinspection JSUnusedGlobalSymbols
 
 import { BadRequestException, Type } from "@nestjs/common";
-import { toFirstCaseBreak, toLowerCaseBreak, toSnakeCase } from "@hichchi/utils";
+import { toFirstCaseBreak, toLowerCaseBreak, toSnakeCase } from "@test-group/utils";
 import { validate, ValidationError } from "class-validator";
 import { hichchiMetadata } from "../metadata";
 import { ClassConstructor, plainToInstance } from "class-transformer";
-import { ErrorResponse, HttpClientErrorStatus } from "@hichchi/nest-connector";
+import { ErrorResponse, HttpClientErrorStatus } from "@test-group/nest-connector";
 
 /**
  * Transform validation errors to error string array

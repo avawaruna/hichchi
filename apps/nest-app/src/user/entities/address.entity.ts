@@ -1,4 +1,4 @@
-import { BaseEntity, HichchiEntity } from "@hichchi/nest-crud";
+import { BaseEntity, HichchiEntity } from "@test-group/nest-crud";
 import { Column } from "typeorm";
 
 @HichchiEntity("address")

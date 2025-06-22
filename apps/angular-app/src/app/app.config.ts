@@ -2,7 +2,7 @@ import { ApplicationConfig, provideZoneChangeDetection } from "@angular/core";
 import { provideRouter } from "@angular/router";
 import { appRoutes } from "./app.routes";
 import { provideHttpClient, withInterceptors } from "@angular/common/http";
-import { apiUrlInterceptor, authInterceptor } from "@hichchi/ngx-utils";
+import { apiUrlInterceptor, authInterceptor } from "@test-group/ngx-utils";
 import { environment } from "../environments/environment";
 
 export const appConfig: ApplicationConfig = {

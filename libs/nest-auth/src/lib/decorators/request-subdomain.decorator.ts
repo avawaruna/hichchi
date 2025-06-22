@@ -1,7 +1,7 @@
 // noinspection JSUnusedGlobalSymbols
 
 import { createParamDecorator, ExecutionContext } from "@nestjs/common";
-import { RequestWithSubdomain, SUBDOMAIN_KEY } from "@hichchi/nest-core";
+import { RequestWithSubdomain, SUBDOMAIN_KEY } from "@test-group/nest-core";
 
 /**
  * Request subdomain decorator

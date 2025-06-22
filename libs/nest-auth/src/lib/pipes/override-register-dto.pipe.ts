@@ -1,5 +1,5 @@
 import { Inject, Injectable, PipeTransform } from "@nestjs/common";
-import { throwValidationErrors, validateDto, validationPipeExceptionFactory } from "@hichchi/nest-core";
+import { throwValidationErrors, validateDto, validationPipeExceptionFactory } from "@test-group/nest-core";
 import { RegisterDto } from "../dtos";
 import { AuthOptions } from "../interfaces";
 import { AUTH_OPTIONS } from "../tokens";

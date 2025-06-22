@@ -1,6 +1,6 @@
 import { EntityManager, FindOneOptions, FindOptionsWhere } from "typeorm";
 import { SortOptions } from "../types";
-import { EntityId, Pagination } from "@hichchi/nest-connector/crud";
+import { EntityId, Pagination } from "@test-group/nest-connector/crud";
 
 export interface Options<Entity> {
     manager?: EntityManager;

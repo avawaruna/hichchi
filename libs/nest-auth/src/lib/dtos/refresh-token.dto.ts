@@ -1,6 +1,6 @@
 import { IsNotEmpty } from "class-validator";
-import { Dto } from "@hichchi/nest-core";
-import { RefreshToken, RefreshTokenBody } from "@hichchi/nest-connector/auth";
+import { Dto } from "@test-group/nest-core";
+import { RefreshToken, RefreshTokenBody } from "@test-group/nest-connector/auth";
 
 @Dto()
 export class RefreshTokenDto implements RefreshTokenBody {

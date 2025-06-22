@@ -12,7 +12,7 @@ import {
 import { HttpService } from "@nestjs/axios";
 import { AxiosError, AxiosRequestConfig } from "axios";
 import { take } from "rxjs";
-import { HttpServerErrorStatus } from "@hichchi/nest-connector";
+import { HttpServerErrorStatus } from "@test-group/nest-connector";
 
 @Injectable()
 export class CustomHttpService {

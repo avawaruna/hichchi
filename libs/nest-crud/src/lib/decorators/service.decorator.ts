@@ -2,7 +2,7 @@
 
 import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
-import { ImplementationException } from "@hichchi/nest-core";
+import { ImplementationException } from "@test-group/nest-core";
 import { BaseEntity, BaseRepository } from "../base";
 import { RepositoryDecorator } from "../types";
 import { MetadataKeys } from "../enums/metadata-keys.enum";

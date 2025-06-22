@@ -1,6 +1,6 @@
 {
-  "name": "@hichchi/ngx-utils",
-  "version": "0.0.1",
+  "name": "@test-group/ngx-utils",
+  "version": "0.0.0",
   "peerDependencies": {
     "@angular/common": "^19.0.0",
     "@angular/core": "^19.0.0"

@@ -1,5 +1,5 @@
 import { Module } from "@nestjs/common";
-import { HichchiCrudModule } from "@hichchi/nest-crud";
+import { HichchiCrudModule } from "@test-group/nest-crud";
 import { AddressEntity, UserEntity } from "./entities";
 import { UserService } from "./services";
 import { UserRepository } from "./repositories";

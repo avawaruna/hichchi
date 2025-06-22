@@ -26,7 +26,7 @@ import {
 } from "typeorm";
 import { QueryDeepPartialEntity } from "typeorm/query-builder/QueryPartialEntity";
 import { FindConditions } from "../types";
-import { EntityId, Model, ModelExtension } from "@hichchi/nest-connector/crud";
+import { EntityId, Model, ModelExtension } from "@test-group/nest-connector/crud";
 
 /**
  * Base Repository Class

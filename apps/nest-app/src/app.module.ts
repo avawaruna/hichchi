@@ -1,14 +1,14 @@
 import { Module } from "@nestjs/common";
 import { AppController } from "./app.controller";
 import { AppService } from "./app.service";
-import { CacheModule } from "@hichchi/nest-core";
+import { CacheModule } from "@test-group/nest-core";
 import { redisConfig } from "./core/config";
-import { ConnectionOptions, HichchiCrudModule } from "@hichchi/nest-crud";
+import { ConnectionOptions, HichchiCrudModule } from "@test-group/nest-crud";
 import { UserModule } from "./user/user.module";
-import { AuthField, AuthMethod, AuthOptions, HichchiAuthModule, UserServiceProvider } from "@hichchi/nest-auth";
+import { AuthField, AuthMethod, AuthOptions, HichchiAuthModule, UserServiceProvider } from "@test-group/nest-auth";
 import { UserService } from "./user/services";
 import { RegisterUserDto } from "./user/dto";
-import { DAY_IN_SECONDS, MONTH_IN_SECONDS } from "@hichchi/nest-connector";
+import { DAY_IN_SECONDS, MONTH_IN_SECONDS } from "@test-group/nest-connector";
 
 const authOptions: AuthOptions = {
     redis: {

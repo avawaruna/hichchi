@@ -1,6 +1,6 @@
 import { BeforeInsert, BeforeUpdate, Column } from "typeorm";
 import { BaseEntity } from "./base-entity";
-import { UserInfo } from "@hichchi/nest-connector";
+import { UserInfo } from "@test-group/nest-connector";
 
 export class HichchiUserEntity extends BaseEntity implements UserInfo {
     @Column({ nullable: false })

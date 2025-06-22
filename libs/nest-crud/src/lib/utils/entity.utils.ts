@@ -8,7 +8,7 @@ import {
 import { Operation, TypeORMErrorType } from "../enums";
 import { EXTRACT_INVALID_COLUMN_REGEX, EXTRACT_INVALID_QUERY_FIELD_REGEX } from "../regex";
 import { CrudErrorResponses, CrudSuccessResponses } from "../responses";
-import { SuccessResponse } from "@hichchi/nest-connector";
+import { SuccessResponse } from "@test-group/nest-connector";
 import { isEntityPropertyNotFoundException, isTypeormException } from "../exceptions";
 
 export class EntityUtils {

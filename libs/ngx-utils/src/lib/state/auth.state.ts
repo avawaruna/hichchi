@@ -5,8 +5,8 @@ import { computed, inject } from "@angular/core";
 import { patchState, signalStore, withComputed, withMethods, withState } from "@ngrx/signals";
 import { withStorageSync } from "@angular-architects/ngrx-toolkit";
 import { catchError, EMPTY, Observable, tap } from "rxjs";
-import { AccessToken, AuthResponse, RefreshToken, SignInBody, TokenResponse, User } from "@hichchi/nest-connector/auth";
-import { SuccessResponse } from "@hichchi/nest-connector";
+import { AccessToken, AuthResponse, RefreshToken, SignInBody, TokenResponse, User } from "@test-group/nest-connector/auth";
+import { SuccessResponse } from "@test-group/nest-connector";
 import { AuthService } from "../services";
 import { Router } from "@angular/router";
 

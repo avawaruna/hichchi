@@ -1,5 +1,5 @@
 import { IsOptional } from "class-validator";
-import { Dto } from "@hichchi/nest-core";
+import { Dto } from "@test-group/nest-core";
 
 @Dto("User")
 export class UpdateUserDto {

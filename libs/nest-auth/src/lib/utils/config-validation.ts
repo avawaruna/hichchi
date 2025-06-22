@@ -1,4 +1,4 @@
-import { ImplementationException, RedisOptions } from "@hichchi/nest-core";
+import { ImplementationException, RedisOptions } from "@test-group/nest-core";
 import { AuthOptions, IUserService, JwtOptions } from "../interfaces";
 import { AuthField } from "../enums";
 
@@ -47,7 +47,7 @@ function throwProviderError(method: string, authField?: AuthField | string, soci
           : "";
     throw new ImplementationException(
         "The user service does not implement the IUserService interface properly",
-        `UserService provided to HichchiAuthModule.registerAsync() does not implements the ${method} method in IUserService interface provided by '@hichchi/nest-auth'`,
+        `UserService provided to HichchiAuthModule.registerAsync() does not implements the ${method} method in IUserService interface provided by '@test-group/nest-auth'`,
         description,
     );
 }

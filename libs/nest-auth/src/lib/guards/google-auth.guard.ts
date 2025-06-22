@@ -14,8 +14,8 @@ import { Observable } from "rxjs";
 import { AuthOptions, TokenUser } from "../interfaces";
 import { AUTH_OPTIONS } from "../tokens";
 import * as passport from "passport";
-import { AuthEndpoint, AuthErrors, AuthStrategy } from "@hichchi/nest-connector/auth";
-import { Errors } from "@hichchi/nest-connector";
+import { AuthEndpoint, AuthErrors, AuthStrategy } from "@test-group/nest-connector/auth";
+import { Errors } from "@test-group/nest-connector";
 import { Request, Response } from "express";
 
 @Injectable()

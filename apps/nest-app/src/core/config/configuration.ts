@@ -3,7 +3,7 @@
 
 import * as dotenv from "dotenv";
 import { DatabaseType } from "typeorm";
-import { toNumber } from "@hichchi/utils";
+import { toNumber } from "@test-group/utils";
 
 dotenv.config();
 

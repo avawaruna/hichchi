@@ -1,5 +1,5 @@
-import { SuccessResponse, HttpSuccessStatus, SuccessResponseDto } from "@hichchi/nest-connector";
-import { toSentenceCase, toUpperCase } from "@hichchi/utils";
+import { SuccessResponse, HttpSuccessStatus, SuccessResponseDto } from "@test-group/nest-connector";
+import { toSentenceCase, toUpperCase } from "@test-group/utils";
 
 const CrudSuccessResponses = {
     CREATED: (entityName: string): SuccessResponse =>

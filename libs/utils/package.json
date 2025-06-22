@@ -1,6 +1,6 @@
 {
-  "name": "@hichchi/utils",
-  "version": "0.0.1",
+  "name": "@test-group/utils",
+  "version": "0.0.0",
   "main": "./src/index.ts",
   "typings": "./src/index.d.ts",
   "dependencies": {

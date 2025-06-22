@@ -6,7 +6,7 @@ import { Inject, Injectable } from "@nestjs/common";
 import { AuthOptions, GoogleProfile } from "../interfaces";
 import { AUTH_OPTIONS } from "../tokens";
 import { AuthService } from "../services";
-import { AccessToken, AuthStrategy, RefreshToken } from "@hichchi/nest-connector/auth";
+import { AccessToken, AuthStrategy, RefreshToken } from "@test-group/nest-connector/auth";
 import { Request } from "express";
 import { DoneCallback } from "passport";
 

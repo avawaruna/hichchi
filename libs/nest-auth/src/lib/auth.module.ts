@@ -12,7 +12,7 @@ import { JwtStrategy, LocalStrategy } from "./strategies";
 import { GoogleAuthGuard, JwtAuthGuard } from "./guards";
 import { TokenVerifyService } from "./services/token-verify.service";
 import { GoogleStrategy } from "./strategies/google.strategy";
-import { CacheModule } from "@hichchi/nest-core";
+import { CacheModule } from "@test-group/nest-core";
 import { ForwardReference } from "@nestjs/common/interfaces/modules/forward-reference.interface";
 import { validateJwtOptions, validateRedisOptions, validateUserServiceProvider } from "./utils/config-validation";
 import { EncryptionService } from "./services/encryption.service";

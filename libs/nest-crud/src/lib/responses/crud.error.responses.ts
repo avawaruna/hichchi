@@ -1,10 +1,10 @@
-import { toLowerCaseBreak, toSentenceCase, toSnakeCase } from "@hichchi/utils";
+import { toLowerCaseBreak, toSentenceCase, toSnakeCase } from "@test-group/utils";
 import { Operation } from "../enums";
 import {
     ErrorResponse,
     HttpClientErrorStatus as ClientError,
     HttpServerErrorStatus as ServerError,
-} from "@hichchi/nest-connector";
+} from "@test-group/nest-connector";
 
 const CrudErrorResponses = {
     E_400_NO_DEFAULT: (entityName: string, field: string, description?: string): ErrorResponse => ({

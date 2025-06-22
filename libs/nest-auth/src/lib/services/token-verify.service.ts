@@ -1,7 +1,7 @@
-import { EntityId } from "@hichchi/nest-connector/crud";
+import { EntityId } from "@test-group/nest-connector/crud";
 import { Injectable } from "@nestjs/common";
-import { VerifyToken } from "@hichchi/nest-connector/auth";
-import { CacheService } from "@hichchi/nest-core";
+import { VerifyToken } from "@test-group/nest-connector/auth";
+import { CacheService } from "@test-group/nest-core";
 
 const PASSWORD_RESET_USER_KEY = (userId: EntityId): string => `password-reset:userId:${userId}`;
 const PASSWORD_RESET_TOKEN_KEY = (token: VerifyToken): string => `password-reset:token:${token}`;

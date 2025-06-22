@@ -1,4 +1,4 @@
-import { User, UserSession } from "@hichchi/nest-connector/auth";
+import { User, UserSession } from "@test-group/nest-connector/auth";
 import { UserExtra } from "./user-extra.interfaces";
 
 export interface CacheUser extends User, UserExtra {

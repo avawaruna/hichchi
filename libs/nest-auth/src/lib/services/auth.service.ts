@@ -12,7 +12,7 @@ import {
 } from "@nestjs/common";
 import { compareSync, hashSync } from "bcrypt";
 import { JsonWebTokenError, TokenExpiredError } from "@nestjs/jwt";
-import { LoggerService } from "@hichchi/nest-core";
+import { LoggerService } from "@test-group/nest-core";
 import { Request, Response } from "express";
 import { AUTH_OPTIONS, USER_SERVICE } from "../tokens";
 import { AuthField, AuthMethod } from "../enums";
@@ -42,7 +42,7 @@ import {
     TokenResponse,
     User,
     VerifyToken,
-} from "@hichchi/nest-connector/auth";
+} from "@test-group/nest-connector/auth";
 import {
     DEFAULT_SALT_ROUNDS,
     DEFAULT_VERIFY_TOKEN_LENGTH,
@@ -50,7 +50,7 @@ import {
     SECOND_IN_MS,
     SuccessResponse,
     SuccessResponseDto,
-} from "@hichchi/nest-connector";
+} from "@test-group/nest-connector";
 import { ACCESS_TOKEN_COOKIE_NAME, REFRESH_TOKEN_COOKIE_NAME } from "../constants";
 
 @Injectable()

@@ -7,7 +7,7 @@
  */
 import { Request } from "express";
 import { HttpException } from "@nestjs/common";
-import { ErrorResponse, Errors } from "@hichchi/nest-connector";
+import { ErrorResponse, Errors } from "@test-group/nest-connector";
 import { AllExceptionsFilter } from "../filters";
 import { LoggerService } from "../services";
 

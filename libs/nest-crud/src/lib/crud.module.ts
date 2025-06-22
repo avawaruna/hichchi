@@ -6,8 +6,8 @@ import { ConnectionOptions } from "./interfaces";
 import { CONNECTION_OPTIONS } from "./tokens";
 import { EntityUtils } from "./utils";
 import { BaseEntity, HichchiUserEntity } from "./base";
-import { hichchiMetadata, ImplementationException } from "@hichchi/nest-core";
-import { DEFAULT_MYSQL_PORT } from "@hichchi/nest-connector";
+import { hichchiMetadata, ImplementationException } from "@test-group/nest-core";
+import { DEFAULT_MYSQL_PORT } from "@test-group/nest-connector";
 
 @Module({})
 export class HichchiCrudModule {
@@ -87,7 +87,7 @@ export class HichchiCrudModule {
      *
      * This method is used to register entities for the `HichchiCrudModule`.
      * It takes an array of entities as an argument and returns a dynamic module.
-     * The entities should be custom entities that extends from `BaseEntity` provided by `@hichchi/nest-core`
+     * The entities should be custom entities that extends from `BaseEntity` provided by `@test-group/nest-core`
      * and implement the (Not the BaseEntity from `typeorm`).
      *
      * @example

@@ -1,7 +1,7 @@
 // noinspection JSUnusedGlobalSymbols
 
-import { RegType, User } from "@hichchi/nest-connector/auth";
-import { EntityId } from "@hichchi/nest-connector/crud";
+import { RegType, User } from "@test-group/nest-connector/auth";
+import { EntityId } from "@test-group/nest-connector/crud";
 
 export class BaseUserEntity implements User {
     regType: RegType;

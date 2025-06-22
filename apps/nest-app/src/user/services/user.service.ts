@@ -1,11 +1,11 @@
-import { CrudService } from "@hichchi/nest-crud";
-import { GoogleProfile, IUserService } from "@hichchi/nest-auth";
-import { RegType, User, VerifyToken } from "@hichchi/nest-connector/auth";
+import { CrudService } from "@test-group/nest-crud";
+import { GoogleProfile, IUserService } from "@test-group/nest-auth";
+import { RegType, User, VerifyToken } from "@test-group/nest-connector/auth";
 import { UserEntity } from "../entities";
 import { UserRepository } from "../repositories";
 import { RegisterUserDto } from "../dto";
-import { EntityId } from "@hichchi/nest-connector/crud";
-import { LoggerService } from "@hichchi/nest-core";
+import { EntityId } from "@test-group/nest-connector/crud";
+import { LoggerService } from "@test-group/nest-core";
 import { Injectable } from "@nestjs/common";
 
 @Injectable()

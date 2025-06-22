@@ -9,10 +9,10 @@ import { AuthService, UserCacheService } from "../services";
 import { cookieExtractor } from "../extractors";
 import { AuthMethod } from "../enums";
 import { v4 as uuid } from "uuid";
-import { LoggerService } from "@hichchi/nest-core";
-import { AuthErrors, AuthStrategy, RefreshToken, User } from "@hichchi/nest-connector/auth";
+import { LoggerService } from "@test-group/nest-core";
+import { AuthErrors, AuthStrategy, RefreshToken, User } from "@test-group/nest-connector/auth";
 import { Request, Response } from "express";
-import { SECOND_IN_MS } from "@hichchi/nest-connector";
+import { SECOND_IN_MS } from "@test-group/nest-connector";
 import { ACCESS_TOKEN_COOKIE_NAME, REFRESH_TOKEN_COOKIE_NAME } from "../constants";
 
 @Injectable()

@@ -1,5 +1,5 @@
 import { createParamDecorator, ExecutionContext } from "@nestjs/common";
-import { User } from "@hichchi/nest-connector/auth";
+import { User } from "@test-group/nest-connector/auth";
 import { TokenUser } from "../interfaces";
 
 /**

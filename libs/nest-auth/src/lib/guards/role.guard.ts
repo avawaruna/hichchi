@@ -2,7 +2,7 @@
 
 import { Injectable, CanActivate, ExecutionContext, ForbiddenException } from "@nestjs/common";
 import { Reflector } from "@nestjs/core";
-import { AuthErrors, Role, User } from "@hichchi/nest-connector/auth";
+import { AuthErrors, Role, User } from "@test-group/nest-connector/auth";
 import { ROLES_KEY } from "../decorators";
 
 @Injectable()

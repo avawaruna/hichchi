@@ -1,5 +1,5 @@
 import { UserEntity } from "../entities";
-import { BaseRepository, HichchiRepository, Repository, InjectRepository } from "@hichchi/nest-crud";
+import { BaseRepository, HichchiRepository, Repository, InjectRepository } from "@test-group/nest-crud";
 
 @HichchiRepository(UserEntity)
 export class UserRepository extends BaseRepository<UserEntity> {

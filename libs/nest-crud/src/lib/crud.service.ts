@@ -11,9 +11,9 @@ import { CrudErrorResponses } from "./responses";
 import { TypeORMErrorHandler } from "./types";
 import { isUUID } from "class-validator";
 import { PaginatedResponse } from "./classes";
-import { hichchiMetadata, ImplementationException } from "@hichchi/nest-core";
-import { DEFAULT_UUID_VERSION, SuccessResponse, UserInfo } from "@hichchi/nest-connector";
-import { EntityId, Model, Pagination } from "@hichchi/nest-connector/crud";
+import { hichchiMetadata, ImplementationException } from "@test-group/nest-core";
+import { DEFAULT_UUID_VERSION, SuccessResponse, UserInfo } from "@test-group/nest-connector";
+import { EntityId, Model, Pagination } from "@test-group/nest-connector/crud";
 
 export abstract class CrudService<BaseEntity extends Model> {
     private readonly entityName: string;

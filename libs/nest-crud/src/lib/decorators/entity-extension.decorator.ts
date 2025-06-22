@@ -4,7 +4,7 @@ import { Entity, getMetadataArgsStorage } from "typeorm";
 import { Type } from "@nestjs/common";
 import { FK_CONSTRAINT_REGEX } from "../constants";
 import { BaseEntity } from "../base";
-import { hichchiMetadata, ImplementationException } from "@hichchi/nest-core";
+import { hichchiMetadata, ImplementationException } from "@test-group/nest-core";
 import { MetadataKeys } from "../enums/metadata-keys.enum";
 
 export function HichchiEntityExtension(tableName: string) {

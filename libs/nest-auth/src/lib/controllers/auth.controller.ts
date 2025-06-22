@@ -20,7 +20,7 @@ import {
     RegType,
     TokenResponse,
     User,
-} from "@hichchi/nest-connector/auth";
+} from "@test-group/nest-connector/auth";
 import { Request, Response } from "express";
 import { AuthService } from "../services";
 import { AUTH_OPTIONS } from "../tokens";
@@ -38,9 +38,9 @@ import {
     ResetPasswordTokenVerifyDto,
     UpdatePasswordDto,
 } from "../dtos";
-import { Endpoint, HttpSuccessStatus, SuccessResponse } from "@hichchi/nest-connector";
+import { Endpoint, HttpSuccessStatus, SuccessResponse } from "@test-group/nest-connector";
 import { AuthenticateSocialDto } from "../dtos/authenticate-social.dto";
-import { LoggerService } from "@hichchi/nest-core";
+import { LoggerService } from "@test-group/nest-core";
 import { AuthInfo } from "../decorators/auth-info.decorator";
 
 @Controller(Endpoint.AUTH)

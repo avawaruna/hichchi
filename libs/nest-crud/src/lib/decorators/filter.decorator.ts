@@ -4,7 +4,7 @@ import { createParamDecorator, ExecutionContext } from "@nestjs/common";
 import { Request } from "express";
 import { parseFilterObject } from "../utils";
 import { FilterOptions } from "../types";
-import { LiteralObject } from "@hichchi/utils";
+import { LiteralObject } from "@test-group/utils";
 
 /**
  * Filter decorator

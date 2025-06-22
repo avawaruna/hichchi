@@ -1,4 +1,4 @@
-**@hichchi/utils**
+**@test-group/utils**
 
 ---
 

@@ -5,8 +5,8 @@ import { AuthService } from "../services";
 import { AUTH_OPTIONS } from "../tokens";
 import { AuthField } from "../enums";
 import { AuthOptions, TokenUser } from "../interfaces";
-import { RequestWithSubdomain, SUBDOMAIN_KEY } from "@hichchi/nest-core";
-import { AuthStrategy } from "@hichchi/nest-connector/auth";
+import { RequestWithSubdomain, SUBDOMAIN_KEY } from "@test-group/nest-core";
+import { AuthStrategy } from "@test-group/nest-connector/auth";
 import { EMAIL_KEY, USERNAME_KEY } from "../constants";
 
 /**

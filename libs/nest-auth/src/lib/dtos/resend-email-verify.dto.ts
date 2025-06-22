@@ -1,6 +1,6 @@
 import { IsNotEmpty } from "class-validator";
-import { Dto } from "@hichchi/nest-core";
-import { ResendEmailVerifyBody } from "@hichchi/nest-connector/auth";
+import { Dto } from "@test-group/nest-core";
+import { ResendEmailVerifyBody } from "@test-group/nest-connector/auth";
 
 @Dto()
 export class ResendEmailVerifyDto implements ResendEmailVerifyBody {

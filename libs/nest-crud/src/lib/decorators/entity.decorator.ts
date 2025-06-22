@@ -6,8 +6,8 @@ import { BaseEntity, BaseEntityTemplateRelations, HichchiUserEntity } from "../b
 import { RelationMetadataArgs } from "typeorm/metadata-args/RelationMetadataArgs";
 import { EntityOptionUnique } from "../types";
 import { Type } from "@nestjs/common";
-import { hichchiMetadata, ImplementationException } from "@hichchi/nest-core";
-import { toCamelCase } from "@hichchi/utils";
+import { hichchiMetadata, ImplementationException } from "@test-group/nest-core";
+import { toCamelCase } from "@test-group/utils";
 import { USER_ENTITY_TABLE_NAME } from "../tokens";
 import { MetadataKeys } from "../enums/metadata-keys.enum";
 
@@ -72,7 +72,7 @@ export function HichchiEntity(
                 `Invalid table name: '${tableName}'`,
                 `The table name assigned to the class decorated with @HichchiEntity("${tableName}") is invalid.`,
                 `The table name for an entity that extends HichchiUserEntity must be '${USER_ENTITY_TABLE_NAME}'.\n` +
-                    "You can import the correct table name from the constant 'USER_ENTITY_TABLE_NAME' in the '@hichchi/nest-crud' package.",
+                    "You can import the correct table name from the constant 'USER_ENTITY_TABLE_NAME' in the '@test-group/nest-crud' package.",
             );
         }
 

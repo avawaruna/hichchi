@@ -1,7 +1,7 @@
 import { RegisterDto, ViewUserDto } from "../dtos";
 import { AuthField, AuthMethod } from "../enums";
 import { HttpException, Type } from "@nestjs/common";
-import { RedisOptions } from "@hichchi/nest-core";
+import { RedisOptions } from "@test-group/nest-core";
 import { ValidationError } from "@nestjs/common/interfaces/external/validation-error.interface";
 
 export interface JwtOptions {

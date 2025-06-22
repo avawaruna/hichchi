@@ -15,14 +15,14 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@hichchi/nest-auth": ["libs/nest-auth/src/index.ts"],
-      "@hichchi/nest-connector": ["libs/nest-connector/src/index.ts"],
-      "@hichchi/nest-connector/auth": ["libs/nest-connector/src/auth.ts"],
-      "@hichchi/nest-connector/crud": ["libs/nest-connector/src/crud.ts"],
-      "@hichchi/nest-core": ["libs/nest-core/src/index.ts"],
-      "@hichchi/nest-crud": ["libs/nest-crud/src/index.ts"],
-      "@hichchi/ngx-utils": ["libs/ngx-utils/src/index.ts"],
-      "@hichchi/utils": ["libs/utils/src/index.ts"]
+      "@test-group/nest-auth": ["libs/nest-auth/src/index.ts"],
+      "@test-group/nest-connector": ["libs/nest-connector/src/index.ts"],
+      "@test-group/nest-connector/auth": ["libs/nest-connector/src/auth.ts"],
+      "@test-group/nest-connector/crud": ["libs/nest-connector/src/crud.ts"],
+      "@test-group/nest-core": ["libs/nest-core/src/index.ts"],
+      "@test-group/nest-crud": ["libs/nest-crud/src/index.ts"],
+      "@test-group/ngx-utils": ["libs/ngx-utils/src/index.ts"],
+      "@test-group/utils": ["libs/utils/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

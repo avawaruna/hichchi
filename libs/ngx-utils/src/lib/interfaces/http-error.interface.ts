@@ -1,4 +1,4 @@
-import { ErrorResponse } from "@hichchi/nest-connector";
+import { ErrorResponse } from "@test-group/nest-connector";
 
 export interface HttpError {
     status: number;

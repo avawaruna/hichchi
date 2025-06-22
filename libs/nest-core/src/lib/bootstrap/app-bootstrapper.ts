@@ -8,7 +8,7 @@ import {
     ValidationPipe,
     ValidationPipeOptions,
 } from "@nestjs/common";
-import { AuthErrors } from "@hichchi/nest-connector/auth";
+import { AuthErrors } from "@test-group/nest-connector/auth";
 import { NestInterceptor } from "@nestjs/common/interfaces/features/nest-interceptor.interface";
 import { AllExceptionsFilter } from "../filters";
 import { isOriginAllowed, validationPipeExceptionFactory } from "../utils";

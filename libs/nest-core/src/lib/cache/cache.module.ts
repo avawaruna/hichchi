@@ -5,7 +5,7 @@ import { CacheableMemory } from "cacheable";
 import { CacheService } from "./services";
 import { RedisOptions } from "../interfaces";
 import { RedisConfigException } from "../exceptions";
-import { DEFAULT_REDIS_PORT } from "@hichchi/nest-connector";
+import { DEFAULT_REDIS_PORT } from "@test-group/nest-connector";
 
 @Global()
 @Module({})

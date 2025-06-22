@@ -1,10 +1,10 @@
 // noinspection JSUnusedGlobalSymbols
 
 import { IsArray, IsNotEmpty, IsUUID } from "class-validator";
-import { EntityId } from "@hichchi/nest-connector/crud";
-import { Dto } from "@hichchi/nest-core";
-import { BulkDeleteBody } from "@hichchi/nest-connector/auth";
-import { DEFAULT_UUID_VERSION } from "@hichchi/nest-connector";
+import { EntityId } from "@test-group/nest-connector/crud";
+import { Dto } from "@test-group/nest-core";
+import { BulkDeleteBody } from "@test-group/nest-connector/auth";
+import { DEFAULT_UUID_VERSION } from "@test-group/nest-connector";
 
 @Dto()
 export class BulkDeleteDto implements BulkDeleteBody {

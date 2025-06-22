@@ -1,10 +1,10 @@
 import { Inject, Injectable } from "@nestjs/common";
 import { AuthOptions, CacheUser } from "../interfaces";
-import { CacheService, LoggerService } from "@hichchi/nest-core";
+import { CacheService, LoggerService } from "@test-group/nest-core";
 import { EncryptionService } from "./encryption.service";
 import { AUTH_OPTIONS } from "../tokens";
-import { UserSession } from "@hichchi/nest-connector/auth";
-import { EntityId } from "@hichchi/nest-connector/crud";
+import { UserSession } from "@test-group/nest-connector/auth";
+import { EntityId } from "@test-group/nest-connector/crud";
 
 const USER_PREFIX = (userId: EntityId): string => `user:${userId}`;
 

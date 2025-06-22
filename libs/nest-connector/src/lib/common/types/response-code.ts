@@ -1,4 +1,4 @@
-import { LooseAutocomplete } from "@hichchi/utils";
+import { LooseAutocomplete } from "@test-group/utils";
 import { AuthErrorResponseCode, AuthSuccessResponseCode } from "../../auth/";
 import { CommonSuccessResponseCode } from "../enums";
 

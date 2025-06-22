@@ -3,7 +3,7 @@
 import { readFileSync, writeFileSync } from "fs";
 import { LoggerService as NestLogger } from "@nestjs/common";
 import { ILogObject, Logger } from "tslog";
-import { DEFAULT_JSON_SPACE, DEFAULT_LOG_FILE_LENGTH, DEFAULT_LOG_LEVEL } from "@hichchi/nest-connector";
+import { DEFAULT_JSON_SPACE, DEFAULT_LOG_FILE_LENGTH, DEFAULT_LOG_LEVEL } from "@test-group/nest-connector";
 
 export const LOG_FILE_NAME = "errors.json";
 

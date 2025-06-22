@@ -1,7 +1,7 @@
 import { Request } from "express";
-import { RegType, User, VerifyToken } from "@hichchi/nest-connector/auth";
+import { RegType, User, VerifyToken } from "@test-group/nest-connector/auth";
 import { GoogleProfile } from "./google-profile.interface";
-import { EntityId } from "@hichchi/nest-connector/crud";
+import { EntityId } from "@test-group/nest-connector/crud";
 import { TokenUser } from "./token-user.type";
 
 export interface UserServiceEvents {

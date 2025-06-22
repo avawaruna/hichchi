@@ -8,8 +8,8 @@ import { AUTH_OPTIONS } from "../tokens";
 import { cookieExtractor } from "../extractors";
 import { AuthMethod } from "../enums";
 import { AuthService } from "../services";
-import { AccessToken, AuthErrors, AuthStrategy } from "@hichchi/nest-connector/auth";
-import { RequestWithSubdomain, SUBDOMAIN_KEY } from "@hichchi/nest-core";
+import { AccessToken, AuthErrors, AuthStrategy } from "@test-group/nest-connector/auth";
+import { RequestWithSubdomain, SUBDOMAIN_KEY } from "@test-group/nest-core";
 import { ACCESS_TOKEN_COOKIE_NAME } from "../constants";
 
 /**

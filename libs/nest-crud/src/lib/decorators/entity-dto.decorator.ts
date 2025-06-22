@@ -1,5 +1,5 @@
 import { Type } from "@nestjs/common";
-import { hichchiMetadata, ImplementationException } from "@hichchi/nest-core";
+import { hichchiMetadata, ImplementationException } from "@test-group/nest-core";
 import { BaseEntity, HichchiUserEntity } from "../base";
 
 export function EntityDto<Entity extends typeof BaseEntity>(entityOrName: Entity) {
