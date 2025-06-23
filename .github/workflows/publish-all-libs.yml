@@ -3,96 +3,177 @@
 name: Publish All Libraries
 
 on:
-  push:
-    branches:
-      - main
+    push:
+        branches:
+            - main
 
 jobs:
-  check-and-publish:
-    name: Check for Tags and Publish
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      id-token: write # needed for provenance data generation
-    timeout-minutes: 15
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          filter: tree:0
-          token: ${{ secrets.PAT }}
+    check-and-publish:
+        name: Check for Tags and Publish
+        runs-on: ubuntu-latest
+        permissions:
+            contents: read
+            id-token: write # needed for provenance data generation
+        timeout-minutes: 15
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+                  filter: tree:0
+                  token: ${{ secrets.PAT }}
 
-      - name: Install Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          registry-url: https://registry.npmjs.org/
+            - name: Check for new tags
+              id: check-tags
+              shell: bash
+              run: |
+                  echo "======================================================================"
+                  echo "                   CHECKING FOR NEW TAGS TO PUBLISH                    "
+                  echo "======================================================================"
 
-      - name: Install dependencies
-        run: npm install
-        shell: bash
+                  # Get all tags that match our release pattern
+                  echo "Fetching tags..."
+                  git fetch --tags
+                  ALL_TAGS=$(git tag -l "release/*/*.*.*")
 
-      - name: Print Environment Info
-        run: npx nx report
-        shell: bash
+                  # Define our libraries
+                  LIBS=("utils" "nest-connector" "nest-auth" "nest-crud" "ngx-utils" "nest-core")
 
-      - name: Build packages
-        run: npx nx run-many -t build --projects="libs/*"
-        shell: bash
+                  # Create a file to track processed tags
+                  PROCESSED_TAGS_FILE=".processed_tags"
+                  if [ ! -f "$PROCESSED_TAGS_FILE" ]; then
+                    echo "Creating new processed tags file..."
+                    touch "$PROCESSED_TAGS_FILE"
+                  fi
 
-      - name: Detect and publish new tags
-        shell: bash
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
-          NPM_CONFIG_PROVENANCE: true
-        run: |
-          # Get all tags that match our release pattern
-          git fetch --tags
-          ALL_TAGS=$(git tag -l "release/*/*.*.*")
+                  echo "----------------------------------------------------------------------"
+                  echo "Checking each library for new tags..."
+                  echo "----------------------------------------------------------------------"
 
-          # Define our libraries
-          LIBS=("utils" "nest-connector" "nest-auth" "nest-crud" "ngx-utils" "nest-core")
+                  # Check for new tags that haven't been processed yet
+                  NEW_TAGS_FOUND=false
+                  for lib in "${LIBS[@]}"; do
+                    echo "Checking $lib..."
+                    LATEST_TAG=$(echo "$ALL_TAGS" | grep "release/$lib/" | sort -V | tail -n 1)
+                    if [ -n "$LATEST_TAG" ] && ! grep -q "$LATEST_TAG" "$PROCESSED_TAGS_FILE"; then
+                      NEW_TAGS_FOUND=true
+                      echo "✅ Found new tag: $LATEST_TAG"
+                    else
+                      echo "❌ No new tags for $lib"
+                    fi
+                  done
 
-          # Create a file to track processed tags
-          PROCESSED_TAGS_FILE=".processed_tags"
-          if [ ! -f "$PROCESSED_TAGS_FILE" ]; then
-            touch "$PROCESSED_TAGS_FILE"
-          fi
+                  echo "----------------------------------------------------------------------"
 
-          # For each library, check for new tags
-          for lib in "${LIBS[@]}"; do
-            echo "Checking for new $lib tags..."
-            # Get the latest tag for this library
-            LATEST_TAG=$(echo "$ALL_TAGS" | grep "release/$lib/" | sort -V | tail -n 1)
+                  # Exit the workflow if no new tags found
+                  if [ "$NEW_TAGS_FOUND" = false ]; then
+                    echo "======================================================================"
+                    echo "               NO NEW TAGS FOUND. EXITING WORKFLOW.                   "
+                    echo "======================================================================"
+                    exit 78  # Special exit code that GitHub Actions interprets as neutral/skipped
+                  fi
 
-            if [ -n "$LATEST_TAG" ]; then
-              # Check if this tag has been processed already
-              if ! grep -q "$LATEST_TAG" "$PROCESSED_TAGS_FILE"; then
-                echo "Found new tag: $LATEST_TAG"
+                  echo "======================================================================"
+                  echo "              NEW TAGS FOUND. CONTINUING WORKFLOW...                  "
+                  echo "======================================================================"
 
-                # Publish the package
-                echo "Publishing $lib..."
-                npx nx release publish --projects=$lib
+            - name: Install Node
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 20
+                  registry-url: https://registry.npmjs.org/
 
-                # Mark this tag as processed
-                echo "$LATEST_TAG" >> "$PROCESSED_TAGS_FILE"
-                echo "$lib published successfully!"
-              else
-                echo "Tag $LATEST_TAG already processed. Skipping."
-              fi
-            else
-              echo "No tags found for $lib"
-            fi
-          done
+            - name: Install dependencies
+              run: |
+                  echo "======================================================================"
+                  echo "                     INSTALLING DEPENDENCIES                           "
+                  echo "======================================================================"
+                  npm install
+              shell: bash
 
-          # Commit the processed tags file if there are changes
-          if git diff --quiet "$PROCESSED_TAGS_FILE"; then
-            echo "No new tags were processed"
-          else
-            git config --local user.email "github-actions@github.com"
-            git config --local user.name "GitHub Actions"
-            git add "$PROCESSED_TAGS_FILE"
-            git commit -m "Update processed tags [skip ci]"
-            git push
-          fi
+            - name: Print Environment Info
+              run: |
+                  echo "======================================================================"
+                  echo "                     ENVIRONMENT INFORMATION                           "
+                  echo "======================================================================"
+                  npx nx report
+              shell: bash
+
+            - name: Build packages
+              run: |
+                  echo "======================================================================"
+                  echo "                        BUILDING PACKAGES                              "
+                  echo "======================================================================"
+                  npx nx run-many -t build --projects="libs/*"
+              shell: bash
+
+            - name: Detect and publish new tags
+              shell: bash
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
+                  NPM_CONFIG_PROVENANCE: true
+              run: |
+                  echo "======================================================================"
+                  echo "                  PUBLISHING PACKAGES WITH NEW TAGS                    "
+                  echo "======================================================================"
+
+                  # Get all tags that match our release pattern
+                  git fetch --tags
+                  ALL_TAGS=$(git tag -l "release/*/*.*.*")
+
+                  # Define our libraries
+                  LIBS=("utils" "nest-connector" "nest-auth" "nest-crud" "ngx-utils" "nest-core")
+
+                  # Create a file to track processed tags
+                  PROCESSED_TAGS_FILE=".processed_tags"
+                  if [ ! -f "$PROCESSED_TAGS_FILE" ]; then
+                    touch "$PROCESSED_TAGS_FILE"
+                  fi
+
+                  # For each library, check for new tags
+                  for lib in "${LIBS[@]}"; do
+                    echo "----------------------------------------------------------------------"
+                    echo "Checking for new $lib tags..."
+                    # Get the latest tag for this library
+                    LATEST_TAG=$(echo "$ALL_TAGS" | grep "release/$lib/" | sort -V | tail -n 1)
+
+                    if [ -n "$LATEST_TAG" ]; then
+                      # Check if this tag has been processed already
+                      if ! grep -q "$LATEST_TAG" "$PROCESSED_TAGS_FILE"; then
+                        echo "✅ Found new tag: $LATEST_TAG"
+                        echo ""
+
+                        # Publish the package
+                        echo "🚀 Publishing $lib..."
+                        npx nx release publish --projects=$lib
+
+                        # Mark this tag as processed
+                        echo "$LATEST_TAG" >> "$PROCESSED_TAGS_FILE"
+                        echo "✅ $lib published successfully!"
+                      else
+                        echo "⏭️ Tag $LATEST_TAG already processed. Skipping."
+                      fi
+                    else
+                      echo "❌ No tags found for $lib"
+                    fi
+                    echo ""
+                  done
+
+                  echo "----------------------------------------------------------------------"
+                  echo "Updating processed tags file..."
+
+                  # Commit the processed tags file if there are changes
+                  if git diff --quiet "$PROCESSED_TAGS_FILE"; then
+                    echo "No changes to processed tags file."
+                  else
+                    git config --local user.email "github-actions@github.com"
+                    git config --local user.name "GitHub Actions"
+                    git add "$PROCESSED_TAGS_FILE"
+                    git commit -m "Update processed tags [skip ci]"
+                    git push
+                    echo "✅ Processed tags file updated and committed."
+                  fi
+
+                  echo "======================================================================"
+                  echo "                        WORKFLOW COMPLETED                             "
+                  echo "======================================================================"
