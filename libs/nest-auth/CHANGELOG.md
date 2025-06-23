@@ -1,3 +1,10 @@
+## 0.4.0 (2025-06-23)
+
+### 🧱 Updated Dependencies
+
+- Updated nest-connector to 0.4.0
+- Updated nest-core to 0.4.0
+
 ## 0.3.1 (2025-06-23)
 
 This was a version bump only for nest-auth to align it with other projects, there were no code changes.
