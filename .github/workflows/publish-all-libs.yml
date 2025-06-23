@@ -8,13 +8,11 @@ on:
             - main
 
 jobs:
-    check-and-publish:
-        name: Check for Tags and Publish
+    check-for-tags:
+        name: Check for New Tags
         runs-on: ubuntu-latest
-        permissions:
-            contents: read
-            id-token: write # needed for provenance data generation
-        timeout-minutes: 15
+        outputs:
+            has_new_tags: ${{ steps.check-tags.outputs.has_new_tags }}
         steps:
             - name: Checkout repository
               uses: actions/checkout@v4
@@ -65,17 +63,35 @@ jobs:
 
                   echo "----------------------------------------------------------------------"
 
-                  # Exit the workflow if no new tags found
+                  # Set output for next job
+                  echo "has_new_tags=$NEW_TAGS_FOUND" >> $GITHUB_OUTPUT
+
                   if [ "$NEW_TAGS_FOUND" = false ]; then
                     echo "======================================================================"
-                    echo "               NO NEW TAGS FOUND. EXITING WORKFLOW.                   "
+                    echo "               NO NEW TAGS FOUND. WORKFLOW WILL SKIP PUBLISHING.      "
                     echo "======================================================================"
-                    exit 78  # Special exit code that GitHub Actions interprets as neutral/skipped
+                  else
+                    echo "======================================================================"
+                    echo "              NEW TAGS FOUND. WORKFLOW WILL CONTINUE WITH PUBLISHING. "
+                    echo "======================================================================"
                   fi
 
-                  echo "======================================================================"
-                  echo "              NEW TAGS FOUND. CONTINUING WORKFLOW...                  "
-                  echo "======================================================================"
+    publish-packages:
+        name: Build and Publish Packages
+        needs: check-for-tags
+        if: needs.check-for-tags.outputs.has_new_tags == 'true'
+        runs-on: ubuntu-latest
+        permissions:
+            contents: read
+            id-token: write # needed for provenance data generation
+        timeout-minutes: 15
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+                  filter: tree:0
+                  token: ${{ secrets.PAT }}
 
             - name: Install Node
               uses: actions/setup-node@v4
